@@ -1,0 +1,8 @@
+"[1~": beginning-of-line
+"[4~": end-of-line
+"[5~": beginning-of-history
+"[6~": end-of-history
+"[3~": delete-char
+"[2~": quoted-insert
+"OD": backward-word
+"OC": forward-word
