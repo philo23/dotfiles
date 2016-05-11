@@ -106,7 +106,7 @@ noremap <Del> <Nop>
 set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " PHP linting
-autocmd FileType php call noremap <Leader>p :! php -l %
+autocmd FileType php call noremap <Leader>p :! php -l %<CR>
 
 " Dispatch bind
 nnoremap <F9> :Dispatch<CR>
