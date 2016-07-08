@@ -126,3 +126,7 @@ map <Leader>t :TagbarToggle<CR>
 
 " Reload ~.vimrc
 map <Leader>r :so ~/.vimrc<CR>
+
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
