@@ -22,11 +22,15 @@ Plugin 'vim-php/tagbar-phpctags.vim'
 Plugin 'iakio/smarty3.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'restore_view.vim'
 
 call vundle#end()
 filetype plugin on
 syntax on
+
+highlight ColorColumn ctermbg=gray
+set colorcolumn=100
 
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
@@ -45,6 +49,8 @@ let ctrlp_custom_ignore = {
 let g:syntastic_php_checkers = ['php']
 
 let NERDTreeQuitOnOpen = 1
+
+let g:EditorConfig_exclude_patterns = ['scp://.*', 'fugitive://.*']
 
 let mapleader = ","
 let maplocalleader = ","
@@ -122,7 +128,9 @@ autocmd StdinReadPre * let s:std_in = 1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Close NERDTree if its the only buffer open
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd BufEnter *
+    \ if (winnr("$") == 1 && exists("b:NERDTreeType") &&
+    \ b:NERDTreeType == "primary") | q | endif
 
 " Toggle NERDTree with Ctrl+N
 map <Leader>n :NERDTreeToggle<CR>
